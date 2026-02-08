@@ -199,7 +199,7 @@ button {
   height: 100%;
   z-index: -1; /* Puts the video behind other content */
   /* transform: translate(-50%, 0%); */
-  object-fit: cover; /* Ensures video covers container while maintaining aspect ratio */
+  object-fit: fill; /* Ensures video covers container while maintaining aspect ratio */
   /* aspect-ratio: 16 / 9; */
 }
 

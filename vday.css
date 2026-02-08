@@ -148,7 +148,7 @@ button {
 
 
 .glass-card {
-  display:block;
+  display:flex-box;
     position:absolute;
     /* 1. Set a semi-transparent background color using RGBA */
     background: rgba(255, 255, 255, 0.04); 

@@ -50,7 +50,8 @@ button {
   border-radius: 11px;
   box-shadow:0 1px 29px rgba(0, 0, 0, 0.4);
   padding-block:4.9px;
-  width:124px;
+  /* width:124px; */
+  width:48%;
   align-content:center;
   align-items:center;
   align-self:center;
@@ -150,7 +151,7 @@ button {
 .glass-card {
   display:flex-box;
     position:absolute;
-  inset: 0;
+    inset: 0% 0px 0px 0px;
     /* 1. Set a semi-transparent background color using RGBA */
     background: rgba(255, 255, 255, 0.04); 
     
@@ -166,10 +167,10 @@ button {
     /* top:29%; */
     /* height: 342px; */
     /* width: 494px; */
-    min-height: 342px;
+    min-height: 357px;
     height: 42%;
     width: 87%;
-    max-height: 342px;
+    max-height: 357px;
     max-width: 494px;
     text-align: center;
     /* align-items:center; */
@@ -249,7 +250,7 @@ button {
     /* Add text shadow for better readability */
     /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);  */
     /* opacity: .84; */
-    cursor:pointer;
+    /* cursor:pointer; */
 }
 
 .yeshover:hover{

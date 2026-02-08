@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // object image
     var image = new Image();
-    image.src = 'images/bubbleheartpic1.png';
+    image.src = 'images/bubbleheartpic1formatted.png';
     // image.src = 'https://i.pinimg.com/originals/90/2c/2b/902c2bbccb72ca76cf3bbe95741174e9.png';
     // image.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Love_heart_uidaodjsdsew.gif/1200px-Love_heart_uidaodjsdsew.gif';
     // image.src = 'https://static.wixstatic.com/media/2cd43b_57438aebde5a4b0fa20c6880a9fafabf~mv2.png/v1/fill/w_320,h_272,fp_0.50_0.50/2cd43b_57438aebde5a4b0fa20c6880a9fafabf~mv2.png';

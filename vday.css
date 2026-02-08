@@ -10,12 +10,13 @@
 
 body{
   background:black;
+  background-image: url("images/bubbleheartfallback.png");
 }
 
 html, body {
   /* background:black; */
-  height: 100dvh;
-  width:100dvw;
+  height: 100%;
+  width:100%;
   margin: 0;
   padding: 0;
   overflow: hidden; /* Hide potential scroll bars caused by positioning */

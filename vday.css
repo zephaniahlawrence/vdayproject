@@ -10,11 +10,11 @@
 
 body{
   background:black;
-  background: url("images/bubbleheartfallback.png") center center / cover no-repeat;
+  background-image: url("images/bubbleheartfallback.png") center center / cover no-repeat;
 }
 
 html, body {
-  background:black;
+  /* background:black; */
   height: 100dvh;
   width:100%;
   margin: 0;

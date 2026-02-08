@@ -58,6 +58,7 @@ button {
 
 .yesbtn{
   /* position:absolute; */
+  margin-right:9px;
   color:#b76e79;
   transition: color .7s ease-in-out;
   /* margin-left:0px; */
@@ -144,6 +145,7 @@ button {
 
 
 .glass-card {
+  display:block;
     position:absolute;
     /* 1. Set a semi-transparent background color using RGBA */
     background: rgba(255, 255, 255, 0.04); 
@@ -157,14 +159,17 @@ button {
     border: 1px solid rgba(255, 255, 255, 0.14); /* Subtle white border for the "edge of glass" */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
     padding: 20px;
+    top:29%;
     /* height: 342px; */
     /* width: 494px; */
+    min-height: 342px;
     height: 42%;
     width: 87%;
     max-height: 342px;
     max-width: 494px;
     text-align: center;
-    align-content:center;
+    /* align-items:center; */
+    /* justify-items:center; */
     align-self:center;
     justify-self:center;
     z-index: 24;
@@ -184,8 +189,8 @@ button {
 
 .video-container video {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0%;
+  left: 0%;
   /* min-width: 494px; */
   /* min-height: 100vh; */
   min-width: 100%;
@@ -193,7 +198,7 @@ button {
   width: 100%;
   height: 100%;
   z-index: -1; /* Puts the video behind other content */
-  transform: translate(-50%, -50%); /* Centers the video */
+  /* transform: translate(-50%, 0%); */
   object-fit: cover; /* Ensures video covers container while maintaining aspect ratio */
   /* aspect-ratio: 16 / 9; */
 }
@@ -210,8 +215,8 @@ button {
 .video-container::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
+  /* top: 0; */
+  /* left: 0; */
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.24);
@@ -219,19 +224,22 @@ button {
 }
 
 .overlay-text {
+  /* display: inline-block; */
     /* Position the text absolutely within the container */
-    position: absolute;
+    /* position: absolute; */
     /* top: 47%; Start positioning from the middle vertically */
     /* left: 51%; Start positioning from the middle horizontally */
-    top:24%;
+    /* top:29%; */
     /* left:36%; */
-    transform: translate(-50%, -50%); /* Center the text perfectly */
+    /* transform: translate(50%, 50%); */
     z-index: 2; /* Place the text on top of the video */
     /* color: pink; Make the text visible against a dark video */
     color: #b76e79;
     font-size: 3rem; /* Adjust font size */
     text-align: center; /* Center the text within its own div */
     align-self:center;
+    align-content:center;
+    justify-content:center;
     justify-self:center;
     white-space:nowrap;
     /* Add text shadow for better readability */
@@ -252,6 +260,7 @@ button {
   transition: scale .7s ease-in-out;
 }
 .emotehover:hover{
+  box-shadow:0 0px 0px rgba(0, 0, 0, 0.0);
   scale: 1.24;
   transition: scale .7s ease-in-out;
 }
@@ -272,7 +281,8 @@ button {
   /* display:none; */
   display:inline-block;
   visibility: hidden;
-  margin-top:77px;
+  color:#b76e79;
+  margin-top:84px;
   /* margin-top:42px; */
   margin-bottom:0px;
   background:transparent;
@@ -297,7 +307,7 @@ button {
   /* height:424px; */
   /* width: 724px; */
   height:64%;
-  width: 87%;
+  width: 89%;
   max-width: 1024px;
   border: 1px solid rgba(255, 255, 255, 0.14); /* Subtle white border for the "edge of glass" */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
@@ -308,7 +318,8 @@ button {
 }
 
 .message3{
-  margin-top: 9px;
+  margin-top: 24px;
+  margin-bottom: -42px;
   color:#b76e79;
 }
 
@@ -332,7 +343,7 @@ button {
 
 .wrapper1 {
   /* display:none; */
-  margin-top: 0px;
+  margin-top:-11px;
   width: 90%;
   max-width: 1536px;
   margin-inline: auto;
@@ -379,11 +390,13 @@ button {
 
 .itemLeft,
 .itemRight {
+  /* display:inline-block; */
   width: 200px;
   height: 142px;
   /* background-color: black; */
   border-radius: 11px;
   position: absolute;
+  /* object-fit: cover; */
   overflow:hidden;
   animation-timing-function: linear;
   animation-duration: 42s;
@@ -407,7 +420,7 @@ button {
 }
 
 .item2 {
-  background: url("images/holdinghandsformatted.jpg") 100% 74% / 124% no-repeat;
+  background: url("images/holdinghandsformatted.jpg") 100% 72% / 124% no-repeat;
   animation-delay: calc(42s / 10 * (10 - 2) * -1);
 }
 

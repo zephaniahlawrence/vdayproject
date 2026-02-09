@@ -21,7 +21,7 @@ html, body {
   width:100%;
   margin: 0;
   padding: 0;
-  overflow: visible; /* Hide potential scroll bars caused by positioning */
+  overflow: auto; /* Hide potential scroll bars caused by positioning */
   /* font-family: 'Nunito' */
   font-family: 'Jersey 20';
   scrollbar-width: none;

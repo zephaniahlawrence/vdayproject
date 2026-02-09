@@ -12,6 +12,7 @@ body{
   /* background:black; */
   /* background: url("images/alternatebackground.png") center center / cover no-repeat; */
   /* background-image: url("images/bubbleheartfallback.png") center center / cover no-repeat; */
+  overflow: hidden;
 }
 
 html, body {
@@ -21,7 +22,7 @@ html, body {
   width:100%;
   margin: 0;
   padding: 0;
-  overflow: auto; /* Hide potential scroll bars caused by positioning */
+  /* overflow: hidden; */
   /* font-family: 'Nunito' */
   font-family: 'Jersey 20';
   scrollbar-width: none;

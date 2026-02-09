@@ -8,21 +8,21 @@
   margin: 0;
 } */
 
+
 body{
   /* background:black; */
-  /* background: url("images/alternatebackground.png") center center / cover no-repeat; */
+  background: url("images/alternatebackground.png") center center / cover no-repeat;
   /* background-image: url("images/bubbleheartfallback.png") center center / cover no-repeat; */
-  /* overflow: hidden; */
 }
 
 html, body {
   /* background:black; */
-  background: url("images/alternatebackground.png") 100dvh no-repeat;
-  min-height: 100dvh;
+  /* background: url("images/alternatebackground.png"); */
+  height: 100%;
   width:100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: hidden; /* Hide potential scroll bars caused by positioning */
   /* font-family: 'Nunito' */
   font-family: 'Jersey 20';
   scrollbar-width: none;

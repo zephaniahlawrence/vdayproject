@@ -24,6 +24,8 @@ html, body {
   overflow: visible; /* Hide potential scroll bars caused by positioning */
   /* font-family: 'Nunito' */
   font-family: 'Jersey 20';
+  scrollbar-width: none;
+  -webkit-scrollbar-width: none;
 }
 
 canvas{

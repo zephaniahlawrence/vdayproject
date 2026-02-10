@@ -222,10 +222,14 @@ button {
   #targetElement{
     position:absolute;
     /* inset:24% 0 0 -2px; */
-    inset:27% 0 0 -1px;
+    inset:24% 0 0 -1px;
     
-    height:57%;
+    height:56%;
     width:104%;
+  }
+  .video-container{
+    /* position:absolute; */
+    inset:3% 0 0 0px;
   }
   .glass-card{
     min-height: 329px;

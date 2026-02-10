@@ -35,44 +35,60 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
-    const targetElement = document.getElementById('targetElement');
+
     const canvas = document.getElementById('canvas');
-    
-    // Listen for mouse movement anywhere on the document
-    document.addEventListener('mousemove', (event) => {
-        // Get the current viewport height
-        const viewportHeight = window.innerHeight;
-        const viewportWidth = window.innerWidth;
-        // Get the mouse's vertical position relative to the viewport
-        const mouseY = event.clientY;
+    const btns = document.querySelectorAll('button');
+
+    document.addEventListener('mousemove', function(event) {
+        canvas.style.pointerEvents = 'all';
         const mouseX = event.clientX;
+        const mouseY = event.clientY;
 
-        // Define the middle zone (e.g., from 40% height to 60% height)
-        const middleStart = viewportHeight * 0.34; // 40% from top
-        const middleEnd = viewportHeight * 0.59;   // 60% from top
-        const middleStart2 = viewportWidth * 0.24; // 40% from left
-        const middleEnd2 = viewportWidth * 0.94;   // 60% from left
+        btns.forEach(btn => {
+            const btnspace = btn.getBoundingClientRect();
 
-        if (mouseY > middleStart && mouseY < middleEnd && mouseX > middleStart2 && mouseX < middleEnd2) {
-            // Mouse is in the middle zone: add the 'active' class
-            targetElement.classList.add('active');
-            canvas.style.pointerEvents = 'none';
-        }
-        else {
-            // Mouse is outside the middle zone: remove the 'active' class
-            targetElement.classList.remove('active');
-            canvas.style.pointerEvents = '';
-        }
+            if (
+                mouseX >= btnspace.left && mouseX <= btnspace.right &&
+                mouseY >= btnspace.top && mouseY <= btnspace.bottom
+            ) {
+                // Mouse is over the target element, change pointer-events of the other element
+                // console.log(`In position`);
+                canvas.style.pointerEvents = 'none';
+                // targetElement.classList.add('active');
+            }       
+        });
     });
 
+    document.addEventListener('touchmove', function(event) {
+        canvas.style.pointerEvents = 'all';
+        const touch = event.touches[0];
+        const touchX = touch.clientX;
+        const touchY = touch.clientY;
+
+        btns.forEach(btn => {
+            const btnspace = btn.getBoundingClientRect();
+
+            if (
+                touchX >= btnspace.left && touchX <= btnspace.right &&
+                touchY >= btnspace.top && touchY <= btnspace.bottom
+            ) {
+                // Mouse is over the target element, change pointer-events of the other element
+                // console.log(`In position`);
+                canvas.style.pointerEvents = 'none';
+                // targetElement.classList.add('active');
+            }
+        });
+        event.preventDefault();
+    }, { passive: false });
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const yesbtn = document.querySelector('.yesbtn');
+    const yeshover = document.querySelector('.yeshover');
     const nobtn = document.querySelector('.nobtn');
+    const nohover = document.querySelector('.nohover');
     const nobtn2 = document.querySelector('.nobtn2');
     const hopeful = document.querySelector('.hopeful');
     const smile = document.querySelector('.smile');
@@ -82,6 +98,98 @@ document.addEventListener('DOMContentLoaded', () => {
     const message1 = document.querySelector('.message1');
     const message2 = document.querySelector('.message2');
     const envelope = document.querySelector('.envelope');
+    const emotehover = document.querySelector('.emotehover');
+    const emotehover2 = document.querySelector('.emotehover2');
+
+
+    document.addEventListener('touchmove', function(event) {
+        // canvas.style.pointerEvents = 'all';
+        yeshover.classList.remove('hover');
+        const touch = event.touches[0];
+        const touchX = touch.clientX;
+        const touchY = touch.clientY;
+
+        const btnspace = yesbtn.getBoundingClientRect();
+
+            if (
+                touchX >= btnspace.left && touchX <= btnspace.right &&
+                touchY >= btnspace.top && touchY <= btnspace.bottom
+            ) {
+                yeshover.classList.add('hover');
+                hopeful.style.display = 'inline';
+                smile.style.display = 'none';
+                sad.style.display = 'none';
+                cry.style.display = 'none';
+                droop.style.display = 'none';
+                message1.style.visibility = 'hidden';
+                envelope.style.display = 'none';
+            }  
+        event.preventDefault(); 
+    }, { passive: false });
+
+
+    document.addEventListener('touchmove', function(event) {
+        // canvas.style.pointerEvents = 'all';
+        nohover.classList.remove('hover');
+        const touch = event.touches[0];
+        const touchX = touch.clientX;
+        const touchY = touch.clientY;
+
+        const btnspace = nobtn.getBoundingClientRect();
+
+            if (
+                touchX >= btnspace.left && touchX <= btnspace.right &&
+                touchY >= btnspace.top && touchY <= btnspace.bottom
+            ) {
+                nohover.classList.add('hover');
+                sad.style.display = 'inline';
+                smile.style.display = 'none';
+                cry.style.display = 'none';
+                droop.style.display = 'none';
+                hopeful.style.display = 'none';
+                message1.style.visibility = 'hidden';
+                envelope.style.display = 'none';
+            }
+        event.preventDefault();  
+    }, { passive: false });
+
+
+    document.addEventListener('touchmove', function(event) {
+        // canvas.style.pointerEvents = 'all';
+        emotehover.classList.remove('hover');
+        const touch = event.touches[0];
+        const touchX = touch.clientX;
+        const touchY = touch.clientY;
+
+        const btnspace = cry.getBoundingClientRect();
+
+            if (
+                touchX >= btnspace.left && touchX <= btnspace.right &&
+                touchY >= btnspace.top && touchY <= btnspace.bottom
+            ) {
+                emotehover.classList.add('hover');
+            }
+        event.preventDefault();  
+    }, { passive: false });
+
+
+    document.addEventListener('touchmove', function(event) {
+        // canvas.style.pointerEvents = 'all';
+        emotehover2.classList.remove('hover');
+        const touch = event.touches[0];
+        const touchX = touch.clientX;
+        const touchY = touch.clientY;
+
+        const btnspace = envelope.getBoundingClientRect();
+
+            if (
+                touchX >= btnspace.left && touchX <= btnspace.right &&
+                touchY >= btnspace.top && touchY <= btnspace.bottom
+            ) {
+                emotehover2.classList.add('hover');
+            }
+        event.preventDefault();  
+    }, { passive: false });
 
 
     yesbtn.addEventListener('mouseover', (event) => {
@@ -111,21 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
         message1.style.visibility = 'hidden';
         envelope.style.display = 'none';
     })
-    // yesbtn.addEventListener('mouseleave', (event) => {
-        // hopeful.style.display = 'none';/
-        // smile.style.display = 'none';
-        // cry.style.display = 'inline';
-        // cry.style.visibility = 'hidden';
-        // message1.style.visibility = 'hidden';
-    // })
-    // nobtn.addEventListener('mouseleave', (event) => {
-    //     // sad.style.display = 'none';
-    //     // smile.style.display = 'none';
-    //     // droop.style.display = 'none';
-    //     // cry.style.display = 'none';
-    //     hopeful.style.display = 'none';
-    //     message1.style.visibility = 'hidden';
-    // })
+
     yesbtn.addEventListener('click', (event) => {
         smile.style.display = 'none';
         hopeful.style.display = 'none';
@@ -169,33 +263,10 @@ document.addEventListener('DOMContentLoaded', () => {
         message1.style.visibility = 'hidden';
 
 
-        // var isMoved = false;
-        // function togglePosition() {
-            // const element = document.getElementById("nobtn2");
-            // // element.style.position = "absolute";
-            
-            // if (isMoved) {
-            //     // Move it back to the original position
-            //     // element.style.left = "0px";
-            //     element.style.bottom = "100px";
-            //     isMoved = false;
-            // } 
-            // else {
-            //     // Move it to the new position
-            //     element.style.right = "100px";
-            //     isMoved = true;
-            // }
-        // }
-
-
-
-        // const element = document.getElementById('nobtn2');
-
-        // element.addEventListener('mouseenter', function() {
         // Get current position and window dimensions
         const currentTop = parseInt(nobtn2.style.top);
         // const currentBottom = parseInt(nobtn2.style.bottom);
-        const currentRight = parseInt(nobtn2.style.right);
+        const currentLeft = parseInt(nobtn2.style.left);
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
         const elementWidth = nobtn2.offsetWidth;
@@ -203,21 +274,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Calculate new, random position within the viewport
         // Math.random() generates a number between 0 and 1
-        // const newTop = Math.floor(Math.random() * (windowHeight - elementHeight));
-        // const newLeft = Math.floor(Math.random() * (windowWidth - elementWidth));
-        const newTop = 944;
-        // const newBottom = 224;
-        const newRight = 999999;
+        const newTop = Math.floor(Math.random() * (windowHeight - elementHeight));
+        const newLeft = Math.floor(Math.random() * (windowWidth - elementWidth));
+
 
         // Ensure the new position is not too close to the current one (optional)
         // For simplicity, we just set the new position directly here
 
         nobtn2.style.top = newTop + 'px';
-        // nobtn2.style.bottom = newBottom + 'px';
-        nobtn2.style.right = newRight + 'px';
-        // });
+        nobtn2.style.left = newLeft + 'px';
 
-            
     })
 
 
@@ -238,127 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 
-    // envelope.addEventListener('click', (event) => {
-    //     sad.style.display = 'none';
-    //     smile.style.display = 'none';
-    //     droop.style.display = 'none';
-    //     hopeful.style.display = 'none';
-    //     // nobtn.style.color = 'red';
-    //     // nobtn.style.visibility = 'hidden';
-    //     // nobtn2.style.display = 'inline-block';
-    //     // nobtn2.style.color = 'red';
-    //     // yesbtn.style.color = '';
-    //     // document.querySelector('.nohover').color = 'red';
-    //     message2.style.display = 'inline';
-    // })
-
-
-        // var isMoved = false;
-
-        // function togglePosition() {
-        //     const element = document.getElementById("nobtn");
-
-        //     if (isMoved) {
-        //         // Move it back to the original position
-        //         element.style.left = "0px";
-        //         isMoved = false;
-        //     } else {
-        //         // Move it to the new position
-        //         element.style.position = "absolute";
-        //         element.style.left = "100px";
-        //         isMoved = true;
-        //     }
-        // }
-
-
 });
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//         var isMoved = false;
-
-//         function togglePosition() {
-//             const element = document.getElementById("nobtn");
-//             element.style.position = "absolute";
-
-//             if (isMoved) {
-//                 // Move it back to the original position
-//                 element.style.left = "0px";
-//                 isMoved = false;
-//             } else {
-//                 // Move it to the new position
-//                 element.style.left = "100px";
-//                 isMoved = true;
-//             }
-//         }
-// });
-
-
-
-// // Get a reference to the element you want to hide
-// const elementToHide = document.getElementById('message2');
-
-// // Add a click event listener to the entire document
-// document.addEventListener('click', function(event) {
-//     event.stopPropagation();
-//     // Check if the clicked element is *not* the element we want to keep visible
-//     if (event.target !== elementToHide) {
-//         // Hide the element using the 'display' property
-//         elementToHide.style.display = 'none';
-//         elementToHide.hidden = true;
-        
-//         // Alternatively, use the 'hidden' attribute for a more modern approach
-//         // elementToHide.hidden = true; 
-//     }
-// });
-
-// // Optional: Prevent clicks *inside* the element from propagating to the document listener
-// // This ensures that clicking content within the element does not hide it
-// elementToHide.addEventListener('click', function(event) {
-//     event.stopPropagation();
-// });
-// const smile = document.querySelector('.smile');
-// const envelope = document.querySelector('.envelope');
-// const popoverElement = document.getElementById('message2');
-// document.addEventListener('click', function(e) {
-//   if (!popoverElement.contains(e.target)) {
-//     // popoverElement.hide();
-//     envelope.style.display = 'none';
-//     // smile.style.display = 'inline';
-//   }
-// });
-
-
-
-
-
-
-
-
-
-
-    // // Get the element and the toggle button
-    // const message2 = document.getElementById('message2');
-
-    // // Function to handle clicks outside the element
-    // function handleClickOutside(event) {
-    //     // Check if the clicked target is not the element itself
-    //     // AND not contained within the element itself
-    //     if (!message2.contains(event.target)) {
-    //         message2.hidden = true;
-    //         // document.querySelector('.message2').classList.remove('active');
-    //         // document.querySelector('.wrapper1').style.display = 'none';
-    //         // document.querySelector('.wrapper2').style.display = 'none';
-    //         console.log('Clicked outside the element, hidden.');
-    //     }
-    // }
-    // // Add a global click listener to the document
-    // document.addEventListener('click', handleClickOutside);
-
-    // // Optional: Add a 'mousedown' listener to the document as well for better compatibility
-    // // in cases where a 'click' event might be suppressed (e.g., dragging)
-    // // document.addEventListener('mousedown', handleClickOutside);
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -374,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
         minDist = 150;
 
 
-    canvas.width = window.innerWidth;;
+    canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
 
@@ -553,7 +499,32 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.addEventListener('mousemove', function(e){
     mouse.x = e.clientX;
     mouse.y = e.clientY;
+    minDist=150;
     });
+    canvas.addEventListener('click', function(e) {
+        minDist=0;
+    });
+
+    canvas.addEventListener('touchstart', function(e){
+        const touch = e.touches[0];
+        mouse.x = touch.clientX;
+        mouse.y = touch.clientY;
+
+        minDist=190;
+        
+    }, { passive: false });
+
+    canvas.addEventListener('touchmove', function(e){
+        const touch = e.touches[0];
+        mouse.x = touch.clientX;
+        mouse.y = touch.clientY;
+        e.preventDefault();
+    }, { passive: false });
+    
+    canvas.addEventListener('touchend', function(e) {
+        minDist=0;
+    });
+
 
     function tick() {
     draw();
@@ -562,6 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     tick();
+
 
 });
 

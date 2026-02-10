@@ -229,13 +229,13 @@ button {
   }
   .video-container{
     /* position:absolute; */
-    inset:3% 0 0 0px;
+    inset:7% 0 0 0px;
   }
   .glass-card{
     min-height: 329px;
     max-height: 329px;    
     /* inset: -24px 0px 0px -19px; */
-    inset: -34px 0px 0px -19px;
+    inset: -24px 0px 0px -19px;
     scale: .64;
   }
   .overlay-text{

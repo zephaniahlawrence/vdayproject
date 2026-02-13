@@ -30,15 +30,24 @@ html, body {
   /* position:relative; */
   /* background:black; */
   /* background: url("images/alternatebackground.png"); */
-  display:flex;
+  display:inline-flex;
   position:absolute;
-  align-content:center; 
+  /* align-content:center; 
+  justify-content:center; */
+
+  align-self:center;
+  align-items:center;
+  align-content:center;
+  justify-self:center;
+  justify-items:center;
   justify-content:center;
+
   height: 100dvh;
   width:100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Hide potential scroll bars caused by positioning */
+  overflow: visible; /* Hide potential scroll bars caused by positioning */
+  /* overflow: hidden; */
   /* font-family: 'Nunito' */
   font-family: 'Jersey 20';
   scrollbar-width: none;
@@ -49,10 +58,11 @@ canvas{
   position:absolute;
   display:block;
   background: transparent;
-  top:0;
-  left:0;
+  /* top:0;
+  left:0; */
   z-index:99;
-  overflow:visible;
+  overflow:hidden;
+  /* height:100dvh;  */
   /* height:100%; */
   /* width:100%; */
   /* pointer-events: none; */
@@ -284,7 +294,8 @@ button {
 
   }
   .glass-card{
-    margin:2% 0px 0px 0px;
+    margin:0% 0px 0px 0px;
+    /* height: 45%; */
     /* min-width:90%; */
     /* min-width:394px;
     width:82%;
@@ -297,14 +308,15 @@ button {
   .overlay-text{
     margin-left:4px;
   }
-  .message1{
-    /* position:relative; */
-    /* top:9%; */
-    /* top:2.4%; */
-    /* top:clamp(-3.7vw, -3.4vw, -2vw); */
+}
+@media screen and (max-height: 900px) {
+  .glass-card{
+    margin:1% 0px 0px 0px;
+    /* height:20%; */
+    min-height: 311px;
+    max-height: 367px;
   }
 }
-
 
 
 
@@ -433,7 +445,7 @@ button {
   color:#b76e79;
   /* bottom:clamp(0px, 4px, 4%); */
   /* bottom:clamp(0px, 9%, 4px); */
-  top:clamp(-19px, -2.7%, -1px);
+  top:clamp(-19px, -4.7%, -1px);
   /* top:84%; */
   /* margin-bottom:auto; */
   background:transparent;

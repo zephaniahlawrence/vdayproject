@@ -1,0 +1,112 @@
+
+<!doctype html>
+<html lang="en">
+
+
+    <head>
+        <meta charset="utf-8"/>
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> 
+        <meta name="theme-color" content="transparent"> -->
+        <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="theme-color" content="transparent">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <title>Will you be my Valentine? 🤍</title>
+        <meta name="description" content="Bria, will you be my Valentine?"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <link href="vday.css" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <link rel="icon" href="images/twogoldhearts.png" type="image/png">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+        
+        <script src="vday.js" defer></script>
+
+
+    <body>
+        
+            <div id="targetElement" class="video-container" style="display:flex; position:absolute; align-self:center; justify-self:center;">
+                <!-- <img src="images/alternatebackground.png" style="top:0; height:100dvh; width:100%;"> -->
+                 <img src="gifs/bubbleheartgif.gif" style="display:flex; position:absolute; align-self:center; justify-self:center; inset:0px 0px 0px -2.9%; object-fit:cover; height:100%; width:104%;">
+                <!-- <img src="gifs/bubbleheartgif.gif" style="display:flex; position:absolute; align-self:center; justify-self:center; object-fit:cover; height:100%; width:104%;"> -->
+                 <div class="overlay-text(off) glass-card reveal" data-direction="top">
+                    <!-- font-size:clamp(1.24rem, 5.42vw, 2.94rem) -->
+                     <!-- font-size:clamp(1.29rem, 8.42vw, 2.99rem) -->
+                    <h1 class="overlay-text reveal(off)" data-direction="right" style="margin-top:29.7px; margin-bottom:11px; text-align:left; justify-self: center; font-size:clamp(1.77rem, 8.42vw, 2.94rem)"><p style="margin-bottom:0px; font-size:clamp(1.84rem, 8.49vw, 2.99rem);">To Bria:</p>Will you be my Valentine?</h1>
+                    <div class="btngroup">
+                        <button id="yesbtn" class="yesbtn yeshover reveal(off)" data-direction="left">
+                            YES
+                        </button>
+                        <button id="nobtn" class="nobtn nohover escape reveal(off)" data-direction="bottom">
+                            NO
+                        </button>
+                        <button id="nobtn2" class="nobtn2 nohover escape">
+                            NOPE
+                        </button>
+                    </div>
+
+                    <br>
+                    <p class="emotegroup reveal" data-direction="bottom">
+                        <img class="emote hopeful" src="gifs/hopeful.gif">
+                        <img class="emote smile" src="gifs/smile.gif">
+                        <img class="emote sad" src="gifs/sad.gif">  
+                        <img class="emote droop" height="72rem" width="72rem" src="gifs/droop.gif">
+                        <button id="crybtn" class="cry emotehover" popovertarget="message2">
+                            <img class="emote" src="gifs/cry.gif">
+                        </button>
+                        <button id="envelopebtn" class="envelope emotehover2" popovertarget="message2">
+                            <img class="emote" src="gifs/envelope.gif">
+                        </button>
+                    </p>
+                    <p class="message1">Just shut up and click me!</p> 
+                    
+                    <div id="message2" class="message2" popover>
+                        <div class="wrapper1">
+                            <div class="itemLeft item1"></div>
+                            <div class="itemLeft item2"></div>
+                            <div class="itemLeft item3"></div>
+                            <div class="itemLeft item4"></div>
+                            <div class="itemLeft item5"></div>
+                            <div class="itemLeft item6"></div>
+                            <div class="itemLeft item7"></div>
+                            <div class="itemLeft item8"></div>
+                            <div class="itemLeft item9"></div>
+                            <div class="itemLeft item10"></div>
+                        </div>
+                        <div class="wrapper2">
+                            <div class="itemRight item1"></div>
+                            <div class="itemRight item2"></div>
+                            <div class="itemRight item3"></div>
+                            <div class="itemRight item4"></div>
+                            <div class="itemRight item5"></div>
+                            <div class="itemRight item6"></div>
+                            <div class="itemRight item7"></div>
+                            <div class="itemRight item8"></div>
+                            <div class="itemRight item9"></div>
+                            <div class="itemRight item10"></div>
+                        </div>
+
+                        <br>
+                        
+                        <h1 id="message3" class="message3">Thank you for these memories. <br> I love you. </h1>
+                        <!-- <img height="94rem" width="94rem" src="images/whiteheartcrystal.png"> -->
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <canvas id="canvas"></canvas>
+    
+
+    </body>
+
+
+</html>
